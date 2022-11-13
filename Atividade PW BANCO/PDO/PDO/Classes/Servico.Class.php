@@ -45,22 +45,25 @@ class Servico extends Crud{
     #Implementando a Função Abastrata
 
     public function inserir(){
-        $sqlInserir = "INSERT INTO $this->tabela (nomeServico, descricaoServico,precoServico) VALUES (:nome,:descricao,:preco)";
-        $stmt = Conexao::prepare($sqlInserir);
-        $stmt->bindParam(':nome', $this->nomeServico, PDO::PARAM_STR);
-        $stmt->bindParam(':descricao', $this->descricaoServico, PDO::PARAM_STR);
-        $stmt->bindParam(':preco', $this->precoServico, PDO::PARAM_STR);
-        $stmt->execute();
+        $nome = $this->getNome();
+        $descricao = $this->getDescricao();
+        $preco = $this->getPreco();
+        $sqlInserir = "INSERT INTO $this->tabela (nomeServico, descricaoServico,precoServico) VALUES ('$nome','$descricao',$preco)";
+        echo $sqlInserir;
+        if(Conexao::query($sqlInserir)){
+            header('location: servicos.php');
+        }
     }
 
     public function atualizar($campo,$id)
     {
-        $sqlAtualizar = "UPDATE $this->tabela SET nomeServico = ':nome', descricaoServico = ':descricao', precoServico = :preco where $campo=$id" ;
-        $stmt = Conexao::prepare($sqlAtualizar);
-        $stmt->bindParam(':nome', $this->nomeServico, PDO::PARAM_STR);
-        $stmt->bindParam(':descricao', $this->descricaoServico, PDO::PARAM_STR);
-        $stmt->bindParam(':preco', $this->precoServico, PDO::PARAM_STR);
-        $stmt->bindParam(':id',$id, PDO::PARAM_INT);
-        $stmt->execute();
+        $nome = $this->getNome();
+        $descricao = $this->getDescricao();
+        $preco = $this->getPreco();
+        $sqlInserir = "UPDATE $this->tabela SET nomeServico = '$nome', descricaoServico = '$descricao', precoServico = $preco where $campo=$id" ;
+        if(Conexao::query($sqlInserir)){
+            header('location: servicos.php');
+        }
+        
     }
 }

@@ -32,7 +32,9 @@
                 });
 
                 $servico = new Servico();
-               foreach($servico->listar() as $key => $row) {
+                $id = filter_input(INPUT_GET,'id');
+                $result = $servico->listar();
+                while ($row = $result->fetch_object()) {
                 ?>
                     <tr>
                         <td class="text-center"><?php echo $row->idServico; ?></td>

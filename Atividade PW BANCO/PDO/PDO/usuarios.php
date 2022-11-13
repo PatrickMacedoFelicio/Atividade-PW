@@ -9,19 +9,15 @@
     <title>Usuários</title>
 </head>
 
-<body>
-    <header>
-
-    </header>
+<body> 
     <?php include_once '_parts/_header.php'; ?>
     <div class="container mt-3">
         <table class="table">
-            <caption>Lista de serviços</caption>
+            <caption>Lista de usuários</caption>
             <thead class="table-secondary">
                 <tr>
                     <th>Código</th>
-                    <th>Nome</th>
-                    <th>Valor</th>
+                    <th>Usuário</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -30,19 +26,17 @@
                 spl_autoload_register(function ($class) {
                     require_once "./Classes/{$class}.class.php";
                 });
-
-                $servico = new Servico();
-               foreach($servico->listar() as $key => $row) {
+                $usuario = new User();
+                foreach($usuario->listar() as $key => $row){
                 ?>
                     <tr>
-                        <td class="text-center"><?php echo $row->idServico; ?></td>
-                        <td><?php echo $row->nomeServico; ?></td>
-                        <td><?php echo $row->precoServico; ?></td>
+                        <td class="text-center"><?php echo $row->idUsuario; ?></td>
+                        <td><?php echo $row->loginUsuario; ?></td>
                         <td>
-                            <a href="GerServico.php?id=<?php echo $row->idServico?>" class="btn btn-info">
+                            <a href="GerUsuario.php?id=<?php echo $row->idUsuario?>" class="btn btn-info">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
-                            <a href="GerServico.php?idDel=<?php echo $row->idServico?>" class="btn btn-danger" onclick= "return confirm('Deseja excluir o Serviço <?php echo $row->nomeServico; ?> ?')">
+                            <a href="GerUsuario.php?idDel=<?php echo $row->idUsuario?>" class="btn btn-danger" onclick= "return confirm('Deseja excluir o Usuário <?php echo $row->loginUsuario; ?> ?')">
                                 <i class="bi bi-trash3-fill"></i>
                             </a>
                         </td>
@@ -52,7 +46,7 @@
                 ?>
             </tbody>
         </table>
-        <a href="GerServico.php" class="btn btn-success btn-lg">
+        <a href="GerUsuario.php" class="btn btn-success btn-lg">
             <i class="bi bi-file-earmark"></i> Novo
         </a>
     </div>

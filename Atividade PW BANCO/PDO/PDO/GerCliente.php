@@ -14,8 +14,8 @@
 
     </header>
     <?php include_once '_parts/_header.php'; ?>
-    <div class="container mt-3">    
-    
+    <div class="container mt-3">
+
     </div>
     <?php include '_parts/_linkJS.php'; ?>
 </body>
