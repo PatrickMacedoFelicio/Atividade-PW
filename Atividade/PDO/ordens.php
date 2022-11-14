@@ -30,7 +30,7 @@
                
             </tbody>
         </table>
-        <a href="GerCliente.php" class="btn btn-success btn-lg">
+        <a href="GerOrdem.php" class="btn btn-success btn-lg">
             <i class="bi bi-file-earmark"></i> Novo
         </a>
     </div>
