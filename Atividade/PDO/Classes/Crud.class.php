@@ -41,5 +41,4 @@ abstract class Crud
 
         return $stmt->fetchAll();
     }
-
 }
