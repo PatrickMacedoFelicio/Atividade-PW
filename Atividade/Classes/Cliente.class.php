@@ -1,7 +1,7 @@
 <?php
 
 class Cliente extends Crud{
-    protected $tabela = 'cliente';
+    protected $tabela = 'Cliente';
     private $idCliente;
     private $nomeCliente;
     private $enderecoCliente;
@@ -101,7 +101,7 @@ class Cliente extends Crud{
         $stmt->bindParam(':bairroCliente',$this->bairroCliente,PDO::PARAM_STR);
         $stmt->bindParam(':cidadeCliente',$this->cidadeCliente,PDO::PARAM_STR);
         $stmt->bindParam(':estadoCliente',$this->estadoCliente,PDO::PARAM_STR);
-        $stmt->bindParam(':preco',$id,PDO::PARAM_INT);
+        $stmt->bindParam(':id',$id,PDO::PARAM_INT);
         $stmt->execute();
     }
 }
