@@ -71,7 +71,7 @@
             <div class="row">
                 <div class="form-group">
                     <label for="txtEndereco">Endereço</label>
-                    <input name="txtEndereco" id="txtEndereco" class="form-control" value="<?php echo isset($clienteEdit->enderecoCliente) ? $clienteEdit->enderecoCliente : null ?>">
+                    <input name="txtEndereco" id="txtEndereco" class="form-control" placeholder="Endereço" value="<?php echo isset($clienteEdit->enderecoCliente) ? $clienteEdit->enderecoCliente : null ?>">
                 </div>
             </div>
             <div class="row">
@@ -88,34 +88,35 @@
                 <div class="form-group mb-3 col-2">
                     <label for="sltEstado">Estado</label>
                     <select id="sltEstado" name="sltEstado" class="form-select" aria-label="Default select example">
+                    <?php $selEstado = isset ($clienteEdit->estadoCliente) ? $clienteEdit->estadoCliente : null?>
                     <option selected>Selecione um estado</option>
-                        <option value="AC" <?php if($clienteEdit->estadoCliente=='AC') echo 'selected' ?>>Acre</option>
-                        <option value="AL" <?php if($clienteEdit->estadoCliente=='AL') echo 'selected' ?>>Alagoas</option>
-                        <option value="AP" <?php if($clienteEdit->estadoCliente=='AP') echo 'selected' ?>>Amapá</option>
-                        <option value="AM" <?php if($clienteEdit->estadoCliente=='AM') echo 'selected' ?>>Amazonas</option>
-                        <option value="BA" <?php if($clienteEdit->estadoCliente=='BA') echo 'selected' ?>>Bahia</option>
-                        <option value="CE" <?php if($clienteEdit->estadoCliente=='CE') echo 'selected' ?>>Ceará</option>
-                        <option value="DF" <?php if($clienteEdit->estadoCliente=='DF') echo 'selected' ?>>Distrito Federal</option>
-                        <option value="ES" <?php if($clienteEdit->estadoCliente=='ES') echo 'selected' ?>>Espírito Santo</option>
-                        <option value="GO" <?php if($clienteEdit->estadoCliente=='GO') echo 'selected' ?>>Goiás</option>
-                        <option value="MA" <?php if($clienteEdit->estadoCliente=='MA') echo 'selected' ?>>Maranhão</option>
-                        <option value="MT" <?php if($clienteEdit->estadoCliente=='MT') echo 'selected' ?>>Mato Grosso</option>
-                        <option value="MS" <?php if($clienteEdit->estadoCliente=='MS') echo 'selected' ?>>Mato Grosso do Sul</option>
-                        <option value="MG" <?php if($clienteEdit->estadoCliente=='MG') echo 'selected' ?>>Minas Gerais</option>
-                        <option value="PA" <?php if($clienteEdit->estadoCliente=='PA') echo 'selected' ?>>Pará</option>
-                        <option value="PB" <?php if($clienteEdit->estadoCliente=='PB') echo 'selected' ?>>Paraíba</option>
-                        <option value="PR" <?php if($clienteEdit->estadoCliente=='PR') echo 'selected' ?>>Paraná</option>
-                        <option value="PE" <?php if($clienteEdit->estadoCliente=='PE') echo 'selected' ?>>Pernambuco</option>
-                        <option value="PI" <?php if($clienteEdit->estadoCliente=='PI') echo 'selected' ?>>Piauí</option>
-                        <option value="RJ" <?php if($clienteEdit->estadoCliente=='RJ') echo 'selected' ?>>Rio de Janeiro</option>
-                        <option value="RN" <?php if($clienteEdit->estadoCliente=='RN') echo 'selected' ?>>Rio Grande do Norte</option>
-                        <option value="RS" <?php if($clienteEdit->estadoCliente=='RS') echo 'selected' ?>>Rio Grande do Sul</option>
-                        <option value="RO" <?php if($clienteEdit->estadoCliente=='RO') echo 'selected' ?> >Rondônia</option>
-                        <option value="RR" <?php if($clienteEdit->estadoCliente=='RR') echo 'selected' ?>>Roraima</option>
-                        <option value="SC" <?php if($clienteEdit->estadoCliente=='SC') echo 'selected' ?>>Santa Catarina</option>
-                        <option value="SP" <?php if($clienteEdit->estadoCliente=='SP') echo 'selected' ?>>São Paulo</option>
-                        <option value="SE" <?php if($clienteEdit->estadoCliente=='SE') echo 'selected' ?>>Sergipe</option>
-                        <option value="TO" <?php if($clienteEdit->estadoCliente=='TO') echo 'selected' ?>>Tocantins</option>
+                        <option value="AC" <?php if($selEstado=='AC') echo 'selected' ?>>Acre</option>
+                        <option value="AL" <?php if($selEstado=='AL') echo 'selected' ?>>Alagoas</option>
+                        <option value="AP" <?php if($selEstado=='AP') echo 'selected' ?>>Amapá</option>
+                        <option value="AM" <?php if($selEstado=='AM') echo 'selected' ?>>Amazonas</option>
+                        <option value="BA" <?php if($selEstado=='BA') echo 'selected' ?>>Bahia</option>
+                        <option value="CE" <?php if($selEstado=='CE') echo 'selected' ?>>Ceará</option>
+                        <option value="DF" <?php if($selEstado=='DF') echo 'selected' ?>>Distrito Federal</option>
+                        <option value="ES" <?php if($selEstado=='ES') echo 'selected' ?>>Espírito Santo</option>
+                        <option value="GO" <?php if($selEstado=='GO') echo 'selected' ?>>Goiás</option>
+                        <option value="MA" <?php if($selEstado=='MA') echo 'selected' ?>>Maranhão</option>
+                        <option value="MT" <?php if($selEstado=='MT') echo 'selected' ?>>Mato Grosso</option>
+                        <option value="MS" <?php if($selEstado=='MS') echo 'selected' ?>>Mato Grosso do Sul</option>
+                        <option value="MG" <?php if($selEstado=='MG') echo 'selected' ?>>Minas Gerais</option>
+                        <option value="PA" <?php if($selEstado=='PA') echo 'selected' ?>>Pará</option>
+                        <option value="PB" <?php if($selEstado=='PB') echo 'selected' ?>>Paraíba</option>
+                        <option value="PR" <?php if($selEstado=='PR') echo 'selected' ?>>Paraná</option>
+                        <option value="PE" <?php if($selEstado=='PE') echo 'selected' ?>>Pernambuco</option>
+                        <option value="PI" <?php if($selEstado=='PI') echo 'selected' ?>>Piauí</option>
+                        <option value="RJ" <?php if($selEstado=='RJ') echo 'selected' ?>>Rio de Janeiro</option>
+                        <option value="RN" <?php if($selEstado=='RN') echo 'selected' ?>>Rio Grande do Norte</option>
+                        <option value="RS" <?php if($selEstado=='RS') echo 'selected' ?>>Rio Grande do Sul</option>
+                        <option value="RO" <?php if($selEstado=='RO') echo 'selected' ?> >Rondônia</option>
+                        <option value="RR" <?php if($selEstado=='RR') echo 'selected' ?>>Roraima</option>
+                        <option value="SC" <?php if($selEstado=='SC') echo 'selected' ?>>Santa Catarina</option>
+                        <option value="SP" <?php if($selEstado=='SP') echo 'selected' ?>>São Paulo</option>
+                        <option value="SE" <?php if($selEstado=='SE') echo 'selected' ?>>Sergipe</option>
+                        <option value="TO" <?php if($selEstado=='TO') echo 'selected' ?>>Tocantins</option>
                     </select>
                 </div>
             </div>
@@ -125,7 +126,7 @@
                     <input type="text" class="form-control" id="txtTelefone" name="txtTelefone" placeholder="Fone" value="<?php echo isset($clienteEdit->telefoneCliente) ? $clienteEdit->telefoneCliente : null ?>">
                 </div>
                 <div class="form-group mb-3 col-5">
-                    <label for="txtNascimento">Fone</label>
+                    <label for="txtNascimento">Data</label>
                     <input type="date" class="form-control" id="txtNascimento" name="txtNascimento" placeholder="Fone" value="<?php echo isset($clienteEdit->nascimentoCliente) ? $clienteEdit->nascimentoCliente : null ?>">
                 </div>
             </div>
