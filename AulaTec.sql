@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `aulatec`.`servico` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
-insert into cliente values(null, "asd","asd","asd",2020-10-20,"asd","asd", "asd");
+insert into cliente values(null, "asd","asd","asd","2020-10-20","asd","asd","ro");
 use aulatec;
 -- -----------------------------------------------------
 -- Table `aulatec`.`ordemservico`
