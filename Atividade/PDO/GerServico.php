@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include '_parts/_linkCSS.php'; ?>
-    <title>Cadastro de Usuario</title>
+    <title>Cadastro de Serviço</title>
+    <link rel="icon" type="url" href="https://cdn-icons-png.flaticon.com/512/6917/6917991.png">
 </head>
 
 <body>
@@ -44,6 +45,11 @@
             } else {
                 $servico->atualizar('idServico', $id);
             }
+        ?>
+            <script>
+                window.location.href = 'servicos.php';
+            </script>
+        <?php
         } else {
         ?>
             <div class="mt-3 col-4" style=" margin: 0 auto; width: 400px;">

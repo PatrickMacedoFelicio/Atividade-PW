@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include '_parts/_linkCSS.php'; ?>
-    <title>Usuários</title>
+    <title>Serviços</title>
+    <link rel="icon" type="url" href="https://cdn-icons-png.flaticon.com/512/6917/6917991.png">
 </head>
 
 <body>
@@ -32,7 +33,7 @@
                 });
 
                 $servico = new Servico();
-               foreach($servico->listar() as $key => $row) {
+                foreach($servico->listar() as $key => $row){  
                 ?>
                     <tr>
                         <td class="text-center"><?php echo $row->idServico; ?></td>

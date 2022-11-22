@@ -5,7 +5,7 @@ TML
 $arqui = explode(DIRECTORY_SEPARATOR,$_SERVER['PHP_SELF']);
 ?>
 
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" style="color:white">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-danger" style="color:white">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">3° TI</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,12 +38,12 @@ $arqui = explode(DIRECTORY_SEPARATOR,$_SERVER['PHP_SELF']);
   <div
     class="p-4 text-center bg-image"
     style="
-      background-image: url('images/fundo.jpg');
+      background-image: url('images/fundo.png');
       height: 250px;">
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); margin-top: 50px;">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
-          <h1 class="mb-1">Programção WEB</h1>
+          <h1 class="mb-1">Programação WEB</h1>
           <h2 class="mb-1">Tecnico em Infomática</h2>
           <h4>Ifro - <i>Campus</i> Ji-Paraná</h4>
         </div>

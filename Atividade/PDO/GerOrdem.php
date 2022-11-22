@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include '_parts/_linkCSS.php'; ?>
     <title>Nova Ordem</title>
+    <link rel="icon" type="url" href="https://cdn-icons-png.flaticon.com/512/6917/6917991.png">
 </head>
 
 <body>
@@ -74,7 +75,7 @@
                             <select name="sltCliente" id="sltCliente" class="form-select">
                                 <?php
                                 $cliente = new Cliente();
-                                foreach ($cliente->listaOrdenada('nomeCliente', 'idCliente') as $key => $row) {
+                                foreach ($cliente->listaUnico('nomeCliente', 'idCliente') as $key => $row) {
                                 ?>
                                     <option value="<?php echo $row->idCliente ?>"><?php echo $row->nomeCliente ?></option>
                                 <?php
@@ -102,20 +103,14 @@
                                 </tr>
                             </thead>
                             <tbody id="itemOS">
-                                <?php
-                                spl_autoload_register(function ($class) {
-                                    require_once "./Classes/{$class}.class.php";
-                                });
-                                $servicos = new Servico();
-                                foreach ($servicos->listaOrdenada('nomeServico') as $key => $row)
-                                ?>
+
                             </tbody>
                         </table>
                     </div>
 
                 </form>
             <?php
-        }
+            }
             ?>
         </section>
     </div>
@@ -124,7 +119,7 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header bg-danger">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">a gente tem esses programas keridaaaah 😘</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -138,25 +133,24 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php 
+                            spl_autoload_register(function ($class) {
+                                require_once "./Classes/{$class}.class.php";
+                            });
+                            $servicos = new Servico();
+                            foreach($servicos ->listaOrdenada('nomeServico') as $key=>$row){
+                            ?>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>formatar notebook</td>
-                                <td>250.00</td>
+                                <th scope="row"><?php echo $row->idServico?></th>
+                                <td><?php echo $row->nomeServico?></td>
+                                <td><?php echo $row->precoServico?></td>
                                 <td>
-                                    <button type="button" class="btn btn-primary" onclick="addServico(1, 'formatar notebook',250)"><i class="bi bi-plus-circle"></i></button>
+                                    <button type="button" class="btn btn-primary" onclick="addServico(<?php echo $row->idServico ?>, '<?php echo $row->nomeServico ?>', <?php echo $row->precoServico ?>)"><i class="bi bi-plus-circle"></i></button>
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
+                            
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
