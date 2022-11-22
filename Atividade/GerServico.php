@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include '_parts/_linkCSS.php'; ?>
     <title>Cadastro de Serviço</title>
-    <link rel="icon" type="url" href="https://cdn-icons-png.flaticon.com/512/6917/6917991.png">
 </head>
 
 <body>
@@ -45,7 +44,7 @@
             } else {
                 $servico->atualizar('idServico', $id);
             }
-        ?>
+            ?>
             <script>
                 window.location.href = 'servicos.php';
             </script>

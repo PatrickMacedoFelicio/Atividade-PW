@@ -26,23 +26,14 @@
             $stmt->execute();
         }
 
-        public function listaUnico($campo, $campo2){
-            $sqlLista = "select $campo, $campo2 from {$this->tabela}";
-
-            $stmt = Conexao::prepare($sqlLista);
+        public function listaOrdenada($campo, $par = 'C'){
+            $sqlSelect = "select * from {$this->tabela} ORDER BY :campo";
+            if($par ==='D'){
+                $sqlSelect .= ' desc';
+            }
+            $stmt = Conexao::prepare($sqlSelect);
+            $stmt->bindParam(':campo',$campo,PDO::PARAM_STR);
             $stmt->execute();
             return $stmt->fetchAll();
         }
-
-        public function listaOrdenada($campo, $tipo = 'C')
-    {
-        $order = $tipo === 'C' ? '' : 'DESC';
-        $sqlLista = "SELECT * FROM {$this->tabela} ORDER BY $campo $order";
-
-        $stmt = Conexao::prepare($sqlLista);
-
-        $stmt->execute();
-
-        return $stmt->fetchAll();
-    }
     }

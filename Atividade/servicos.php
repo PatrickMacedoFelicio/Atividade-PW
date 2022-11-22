@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include '_parts/_linkCSS.php'; ?>
-    <title>Clientes</title> 
-    <link rel="icon" type="url" href="https://cdn-icons-png.flaticon.com/512/6917/6917991.png">
+    <title>Lista de Serviços</title>
 </head>
 
 <body>
@@ -17,38 +16,33 @@
     <?php include_once '_parts/_header.php'; ?>
     <div class="container mt-3">
         <table class="table">
-            <caption>Lista de clientes</caption>
+            <caption>Lista de serviços</caption>
             <thead class="table-secondary">
                 <tr>
                     <th>Código</th>
                     <th>Nome</th>
-                    <th>Telefone</th>
-                    <th>Nascimento</th>
-                    <th>Cidade</th>
-                    <th>Estado</th>
+                    <th>Valor</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
-            <?php
+                <?php
                 spl_autoload_register(function ($class) {
                     require_once "./Classes/{$class}.class.php";
                 });
 
-                $cliente = new Cliente();
-                foreach($cliente->listar() as $key => $row){  
+                $servico = new Servico();
+                foreach($servico->listar() as $key => $row) {
                 ?>
                     <tr>
-                        <td class="text-center"><?php echo $row->idCliente; ?></td>
-                        <td><?php echo $row->nomeCliente; ?></td>
-                        <td><?php echo $row->telefoneCliente; ?></td>
-                        <td><?php echo $row->nascimentoCliente; ?></td>
-                        <td><?php echo $row->cidadeCliente; ?></td>
-                        <td><?php echo $row->estadoCliente; ?></td>
+                        <td class="text-center"><?php echo $row->idServico; ?></td>
+                        <td><?php echo $row->nomeServico; ?></td>
+                        <td><?php echo $row->precoServico; ?></td>
                         <td>
-                            <a href="GerCliente.php?id=<?php echo $row->idCliente?>" class="btn btn-info">
+                            <a href="GerServico.php?id=<?php echo $row->idServico?>" class="btn btn-info">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
-                            <a href="GerCliente.php?idDel=<?php echo $row->idCliente?>" class="btn btn-danger" onclick= "return confirm('Deseja excluir o Cliente <?php echo $row->nomeCliente; ?> ?')">
+                            <a href="GerServico.php?idDel=<?php echo $row->idServico?>" class="btn btn-danger" onclick= "return confirm('Deseja excluir o Serviço <?php echo $row->nomeServico; ?> ?')">
                                 <i class="bi bi-trash3-fill"></i>
                             </a>
                         </td>
@@ -58,7 +52,7 @@
                 ?>
             </tbody>
         </table>
-        <a href="GerCliente.php" class="btn btn-success btn-lg">
+        <a href="GerServico.php" class="btn btn-success btn-lg">
             <i class="bi bi-file-earmark"></i> Novo
         </a>
     </div>

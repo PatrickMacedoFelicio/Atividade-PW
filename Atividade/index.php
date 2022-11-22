@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include '_parts/_linkCSS.php'; ?>
     <title>Usuários</title>
-    <link rel="icon" type="url" href="https://cdn-icons-png.flaticon.com/512/6917/6917991.png">
 </head>
 
 <body>
