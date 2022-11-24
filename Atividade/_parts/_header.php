@@ -44,7 +44,8 @@ $arqui = explode(DIRECTORY_SEPARATOR,$_SERVER['PHP_SELF']);
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
           <h1 class="mb-1">Programação WEB</h1>
-          <h2 class="mb-1">Tecnico em Infomática</h2>
+          <h1 class="mb-1">Tecnico em Infomática</h1>
+          <h4 class="mb-1">Patrick Macêdo Felicio</h4>
           <h4>Ifro - <i>Campus</i> Ji-Paraná</h4>
         </div>
       </div>
