@@ -40,7 +40,11 @@
                         <td><?php echo $row->nomeCliente ?></td>
                         <td><?php echo $row->dataOS ?></td>
                         <td><?php echo $row->totalOS ?></td>
-                        <td></td>
+                        <td>
+                            <a href="GerOrdem.php?idDel=<?php echo $row->idOS?>" class="btn btn-danger" onclick= "return confirm('Deseja excluir o Serviço <?php echo $row->nomeCliente; ?> ?')">
+                                <i class="bi bi-trash3-fill"></i>
+                            </a>
+                        </td>
                     </tr>
                     <?php
                 }

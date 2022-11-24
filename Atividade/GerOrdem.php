@@ -45,6 +45,16 @@
             </script>
         <?php
         }
+        if (filter_has_var(INPUT_GET, 'idDel')) {
+            $ordem = new Ordem();
+            $id = filter_input(INPUT_GET, 'idDel');
+            $ordem->deletarOS('idOS', $id);
+            ?>
+            <script>
+                window.location.href = 'ordens.php';
+            </script>
+        <?php
+        }
         ?>
         <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post" id="formOS">
             <div class="row">

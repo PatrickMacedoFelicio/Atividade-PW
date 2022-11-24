@@ -18,6 +18,10 @@
 
     </div>
     <?php include '_parts/_linkJS.php'; ?>
+
+    <div class="p-4 text-center bg-image" style=" background-image: url(''); height: 1000px;">
+        
+    </div>
 </body>
 
 </html>
